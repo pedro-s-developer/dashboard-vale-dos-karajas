@@ -16,7 +16,7 @@
   --green:#00934a;--green-bg:#E6F5EE;
   --yellow:#E08C00;--yellow-bg:#FFF6E0;
   --teal:#0077A8;--teal-bg:#E0F4FA;
-  --purple:#7B2FBE;--purple-bg:#F3EAFF;
+  --purple:#2D7D64;--purple-bg:#E8F4F0;
   --red:#C0392B;--red-bg:#FEF0EF;
 }
 body{background:var(--bg);color:var(--text);font-family:'Poppins',sans-serif;padding:16px 14px;min-height:100vh;}
@@ -28,7 +28,7 @@ body{background:var(--bg);color:var(--text);font-family:'Poppins',sans-serif;pad
 @keyframes stageIn{from{opacity:0;transform:translateY(8px);}to{opacity:1;transform:translateY(0);}}
 
 /* ── HEADER ── */
-.header{padding-bottom:14px;border-bottom:1px solid var(--border);margin-bottom:14px;}
+.header{padding-bottom:14px;border-bottom:1px solid var(--border);margin-bottom:14px;position:relative;padding-top:8px;}
 .h-eyebrow{display:flex;align-items:center;gap:6px;margin-bottom:6px;flex-wrap:wrap;}
 .h-tag{font-size:9px;font-weight:900;text-transform:uppercase;letter-spacing:1.5px;color:var(--text4);}
 .h-tag.blue{color:var(--blue);}
@@ -87,8 +87,8 @@ body{background:var(--bg);color:var(--text);font-family:'Poppins',sans-serif;pad
 .panel-row .panel-sub{font-size:9px;color:var(--text3);font-family:'IBM Plex Mono',monospace;}
 .chart-legend{display:flex;flex-wrap:wrap;gap:10px;margin-bottom:6px;font-size:9px;color:var(--text3);}
 .chart-legend span{display:flex;align-items:center;gap:4px;}
-.lg-sw-bar{width:11px;height:8px;border-radius:2px;background:#E8D7F7;border:1px solid #7B2FBE;}
-.lg-sw-line{width:14px;height:2px;background:#7B2FBE;border-radius:1px;}
+.lg-sw-bar{width:11px;height:8px;border-radius:2px;background:#E8F4F0;border:1px solid #2D7D64;}
+.lg-sw-line{width:14px;height:2px;background:#2D7D64;border-radius:1px;}
 .lg-sw-cpr{width:14px;height:2px;background:#E08C00;border-radius:1px;}
 .lg-sw-rec{width:14px;height:2px;background:#00934a;border-radius:1px;}
 .panel-divider{height:14px;}
@@ -112,7 +112,7 @@ body{background:var(--bg);color:var(--text);font-family:'Poppins',sans-serif;pad
 /* ── OBJ CARDS ── */
 .obj-grid{display:grid;grid-template-columns:1fr;gap:10px;}
 .obj-card{background:var(--white);border:1px solid var(--border);border-radius:14px;position:relative;overflow:hidden;}
-.obj-card.msg{background:var(--purple-bg);border-color:rgba(123,47,190,0.3);}
+.obj-card.msg{background:var(--purple-bg);border-color:rgba(45,125,100,0.3);}
 .obj-card.ven{background:var(--blue-bg);border-color:rgba(24,119,242,0.3);}
 .obj-bar{position:absolute;top:0;left:0;right:0;height:4px;}
 .obj-bar.msg{background:var(--purple);}.obj-bar.ven{background:var(--blue);}
@@ -143,7 +143,7 @@ body{background:var(--bg);color:var(--text);font-family:'Poppins',sans-serif;pad
 .camp-group-badge{font-size:9px;font-weight:900;letter-spacing:1px;padding:3px 8px;border-radius:5px;text-transform:uppercase;}
 .camp-group-badge.topo{background:#FFF6E0;color:#E08C00;}
 .camp-group-badge.meio{background:#E0F4FA;color:#0077A8;}
-.camp-group-badge.fundo-msg{background:#F3EAFF;color:#7B2FBE;}
+.camp-group-badge.fundo-msg{background:#E8F4F0;color:#2D7D64;}
 .camp-group-badge.fundo-ven{background:#EAF1FF;color:#1877F2;}
 .camp-group-title{font-size:12px;font-weight:800;color:var(--text);}
 .camp-group-sub{font-size:9px;color:var(--text3);font-family:'IBM Plex Mono',monospace;margin-top:2px;}
@@ -200,12 +200,12 @@ body{background:var(--bg);color:var(--text);font-family:'Poppins',sans-serif;pad
 .funnel-header{display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:14px;padding-bottom:12px;border-bottom:1px solid var(--border-soft);gap:8px;}
 .funnel-header-left{display:flex;align-items:center;gap:8px;}
 .funnel-type-icon{width:30px;height:30px;border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:14px;flex-shrink:0;}
-.funnel-type-icon.msg{background:#F3EAFF;color:#7B2FBE;}
+.funnel-type-icon.msg{background:#E8F4F0;color:#2D7D64;}
 .funnel-type-icon.ven{background:#EAF1FF;color:#1877F2;}
 .funnel-title{font-size:12px;font-weight:800;line-height:1.2;}
 .funnel-subtitle{font-size:10px;color:var(--text3);margin-top:2px;}
 .funnel-tag{font-family:'IBM Plex Mono',monospace;font-size:9px;font-weight:700;padding:3px 7px;border-radius:5px;flex-shrink:0;}
-.funnel-tag.msg{background:#F3EAFF;color:#7B2FBE;}
+.funnel-tag.msg{background:#E8F4F0;color:#2D7D64;}
 .funnel-tag.ven{background:#EAF1FF;color:#1877F2;}
 .funnel-reach-banner{display:flex;align-items:center;gap:10px;background:#F7F8FA;border:1px solid var(--border);border-radius:8px;padding:10px 14px;margin-bottom:12px;}
 .funnel-reach-label{font-size:10px;color:var(--text4);font-weight:600;text-transform:uppercase;letter-spacing:0.5px;}
@@ -228,7 +228,7 @@ body{background:var(--bg);color:var(--text);font-family:'Poppins',sans-serif;pad
 .s-blue{--stage-color:#1877F2;--stage-soft:#EAF1FF;}
 .s-teal{--stage-color:#0077A8;--stage-soft:#E0F4FA;}
 .s-yellow{--stage-color:#E08C00;--stage-soft:#FFF6E0;}
-.s-purple{--stage-color:#7B2FBE;--stage-soft:#F3EAFF;}
+.s-purple{--stage-color:#2D7D64;--stage-soft:#E8F4F0;}
 .s-green{--stage-color:#00934a;--stage-soft:#E6F5EE;}
 .funnel-insight{background:linear-gradient(135deg,#0F1724 0%,#1A2438 100%);border-radius:10px;padding:14px 16px;color:#fff;display:flex;align-items:flex-start;gap:12px;margin-top:14px;}
 .funnel-insight-icon{width:28px;height:28px;background:rgba(255,209,102,0.15);border-radius:8px;display:flex;align-items:center;justify-content:center;color:#FFD166;font-size:13px;flex-shrink:0;}
@@ -365,14 +365,18 @@ body{background:var(--bg);color:var(--text);font-family:'Poppins',sans-serif;pad
 
 <!-- HEADER -->
 <div class="header">
-  <div>
-    <div class="h-eyebrow">
-      <span class="h-tag">Relatório de Performance</span>
-      <span class="h-sep">·</span>
-      <span class="h-tag blue">Meta Ads</span>
+  <div style="position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,#2D7D64 0%,#C47B30 100%);border-radius:3px 3px 0 0;"></div>
+  <div style="display:flex;align-items:center;gap:14px;">
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAFoAAABaCAYAAAA4qEECAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAABczSURBVHhe7V0HeBRHltbt7dmASDYZ+3a9a269dxu+3fXeJq8Ta7wGlBAojoQikgCTTc6YIHI4gRHBgAhCEhLKOWeUc845x8kjzX9fVc/0BAmMkUbygn6+p5l+VV1d/XfNq1evqhotqVRqKJVKL0yIZkVLKpXewAQ0DkL0BXXlBEYfE0SPESaIHiNMED1GGGeipWMo44txJnqsQQgfhHQceB83ovsFAhTU1aCgvu65pVAmBfW1zPeGoXnUpbi+DjVtbRAPDLLXHhgce6bHjWhn7weYbr4cbzmYvpC8LRN1/XDy83WW+GjfVhx5cBtVrS3qVRkTjBvRW2674j/Ml2Geo8n3lrnk04H5pN+/Q+Y4GGOGrSFeN1uOd50scDcmXL06Gse4Eb3j7g1MttDFQifz7y3zCcEOJpi/1hxvOTGinmdYWcvBTDsjTDHVwQX/x+pV0ij+5Yie72iGX2yyxaINqzFptS4WOJo+P9H0oZhhloMpplvoIyQng9ZFOga9478c0aQlL/rSBneiI7H37g3MsDLAPEezIfmeJeTBaFsZ4sN9X0EgFEI6Bu7fuBO9wMmcijoZz5Kpq/Wx/Ng+Ws6pxx6YaqnPpj1vWfOdOJhqoYeQrCe0HE1TPa5ET+LIiCa21nEoGU+T2Q4meHetBVr6ukCctg/3bcVMW0M2nZQlL4+ULf9Uv8Ykjg4OPrijXjWNYNyI3nTTBVr6H0PbQh/aFnqYY2+Kt504z2VvZ9sb47ebHNDR10fLOhPghakcHSx05GCOvRGmWhlgkqUupnB0oc3RwWQLHWhb6mOG3UrMk9l0aj4s9WF96ZR61TSCcSJaCu+kONyOCYdHcjx23L6G99bbYYqVPhY4cYYQqy5TrQ1g4HyY7cTCC7IwyWQptM0N8KuNtrC6cAKnfL1wIzIMt6LCcCHQB06ul/DRnk2YQ7wOCz3q9k2z0of5uWPqldMIxo3oK8F+OOR5l9XUtLaAc+4YpnD0sfA7zMgk8+VwCfJjz00pK8THezbgbnw0eEIRung8PHqShFM+D3HW3wvRBXls3tSyEmy8fgXzbYzxGmcpOOePs2maxDgRDWz+9htoLf1f2F45xXZEAwAcL19gvJG1w7fs2WuM8e46S9R3drBl9fN44AkF9Htweir++0tbvGauA20zXUyhn8ux7MhuNHV3s+d4pyRhqpkOTM4dZXWaxLgRvfPuDbzG0cEks6XwTklg9VyxEJ8e+ArTbQyH2Gty/DpHBzvcrtO86p5CdF4W3rDUx0wbQzqYYc4xxUInM/zYdCkMThyAaIA8TgaGp45AR+a9aBrjRrTcvSMdl+7RvdR7kCMiLwczrAwxn5JECGP85Hn2JvjJGnOUNDfRfINKVHNFQny0ZzMm2xgMeUBUHM0wjaOLsJxM9pytt12x9Mhu9liTGHeiqRdgZ4K8ulo2jQTXlh7dgxlWK1iiaWs218X+B98ymWiYWUF0SFYGploo/OnhhPwaDnoo3LnFB7dD78R+9liTGHeiCQGTzZfhm7AAlfRvIoIw2WI5S9Kbdqvwyw22aFWys8rY/+AWppBo4DAEy4X4zXvv36T5zwc8wo+Nl8DsZe8MlYmm/qyLqj+bX1eNhfYmmO/AmI/J5jq4GRbMJKobZ4B6D9NWP7tFz7E3xt8PbMWyY3sx01ofk6x0Xn6vQ5noN22N8McdTuCJRWw6+f6X3Zsxy3YVjWd8fnA7JIPKllwVy4/vxTRrxehwOHlrLQez7Iwww8aQjkinWRnA/FUieq6DKf7T3hQlDfU0TSrrGq1czkDbUg/TLPQRmJ6iVoIqlh/fg5lWzyZaXUhH/EoRTVyx6Zb68E1Nomlyy3DGzwNaqz7DJwe3QTyocMuGA+fsUUxbbTCEzGfJVCv9V8t0ECEBptP+j2ianOiw7HT8yGAxzgd6M3qplBl2S6UYVDMje+/exKTvGXZ9JYkmJsLpqrwqDNW1HW1Y5MBBelW5TMvoH8VHoblbMTIkeJyWBG1LHfrreJ54iZxos5c71jGU6Jk2K/Hx/i0QSxUtVTA4AKuLJ9HS3cXqOrj9+MOWNciprWJ1VN/fj19vsqednTqhwwkJmU620oP52VeMaNIhvr3GFIWNTIcox4O4KHT0M+FQgtvRodDS/RDXw0NYnXyEeOqxJ143XYa3ntKi5ZMMC9aSkaYpJpstxfXoULYcTeIHQzSRyRwdnPNn7LEcTV2d4MsCRoRQg+OH8O8mX+DTQ9sxIBsZDhLbTYbhAj4+2bsZr1noUrLVA/3ylkwCVq9xlmPFsX20jFdiKkuZhBm2K/G3PRshkEhoHvXbr25vwbtrLekMy1QLHdyJjZDlU0Q9Kpob8acdTnjN9AvMtTdhZ3BokMnRDG+uWYUfmS3FJ/u2oaWvFxX1deAq+e+awrgRvf3udUzmqBK9wMmMtmrXSIVZUEZCUT7esFpB8822N8LPnTh0NZIc8omA9u4ebL7mgp85WWAqR4+GSslsy0xLA/xigzX2uN1AH5+PXqEAu7+9BvEYrFwaN6L33f92CNFEZtkb00UuRezgRYGMqnJMX22AuU7G1DRMt16B97c5oKheEZBSRmVLG7xTkuESEgDXiGCEZWeitaeHTXe8eh7Lv37Jo3euof7QNtcZEgQiw+RpVivw/nYnlDY2qJxDWuzGGy54024lFjiaY8E6M0yz1sN7X1rDMzFWNa/KkSp4AiF23bkOrVWfvvzuXUZ1JWbbrcR8EiZV67Qo2dYr8MsvV+NOZAh13eRILC+lC2jmrDFm8jpxaGRv+modGDrvhXdKHFq6OodQTQL+5c2NuBoagA92bsQUC11MWa0Hi3Mv+YCFmEUD5wOYbKk3pFXLyZ5lb4QZ5nr4zTZH6DkfwmeHd+MdJwu67k4lL7HvjiRItIJO8P7PBhsa0Le8eAo2l8/C9MwxfLxvK37ixMEUjh5m2jExETJkf+ljHQQppUWYZW2ENxyMsJD6tma0o1MmkXgNxG5PtzakUbd5srDpcEK8C5KfzCvOsDakC220V+vTKN1M25V0lRNTPnMNMjJ8JYgmuBERimlmOphpvxIL15rj7WF8X00JeRAvfayDQG5F3eNisMhpNV4308Esm1V0lEgWMz5NyFo7dd2LCDFbJmePqNVKMxhXognkZFe3tGL/vVv4y+4v8ZM1pphrswpzbFdh7rBiJBN1/fcTsujGzuWMWo00g/ElWsay8hBYIBKitKEOqeXFSC4vpp9DpKKEfqao67+HkHMTSwvQ2N1Ow67PcgdHA+NL9A8EyssWNIUfNtGyIP/T5XnyPEXklxjicWsGP2yiXyJomOhntxVNWMantdXvvpI8v7KMHjRMNJkteXqFVYh+ejYlPCOTchK1KqpxZoa6Z5w/JE39eGTQMNEKkIDQoNI0lVTpOwGZbCWiZD7Ze1XezEM6LpHS5kxygnK5EqWQp7xdKhepvMhxOHTz+TQ8IMdo0a1Rov2fpMDY+TDKG5lFiaRFRWZnYfc1V0pqU3cHLM+dQEJpkSxVih4+D+svn0VgRqrKXaaVl4Bz/iTuRIUiKDkOB+7dhitZRiabGXf2uo+dt67hUWwUzj72QHBmuuJkAF18HrzionH+kTsMTx7Cjns30Kg0FxmUmYaj7m4ISk7AcXc3XIsMUSF8pNAo0ZnVFdDS/wwH3G+zuvDcLKy9col+90lOhJbBEphdOMmmt/X1YJalPs4GeLI6mvdJEl5ftRT5jXV06qqspRlBaSnss/hg92asOnUY4oEBZFaW4fdbHLHp5hWa1i8UYY3LeSTk50IoEiMkNxNvWhvi15vt0dLdicyqCkxetRx+5OECSC4rhdayv8M1IlCpBiODRokmMDp1Au9tWIN+ETPv550ch5CMFAwMDuJRYjwOedzHdM4KFDczW4fb+/vxjhMHl0MVK/oJAtKfYJ61Eeq6SQhUATnRSw7vhNUlxQMLyE6BlsFixBTl42ZsJL44rBrgD8pKh5bBZ9h1/1tEF+TSBrHP/R67TzwgLQWpJeSXNjrQONHeaSnQWvlP+Gem0eOLjz3R3teH7KoyhGelo6W3F1M5K7DPg9lmQZYTvONoAZdQ1dWlARlPMNvamBL+bVgAyhsUU1gEhGjLi87scUNPJ2ZbrcJ+TzfYX7mIz2XroJWtwaeHduLXWx3RK+DD9vJZaOn/A3/dtQWPUhKVco0ONE50n1BIZ0Aszjmjl8/D1SBfqr8eEoTLwf6IzcnE4oO7sGidHbgCAfoEAvyUEu2vUo5/5hPMtjJGTGEebkYGIa+uRiV9yaGdWK3Uopt6ezDX1gT7HtzB+ptXMc/OFM1qS373PryLd50s2eN7cdH4wzZH2tL1jh9ETWerSv6RQKNEy32BQx5umG1vArfYKKQWF0MgFuGSnze4YjFEEgki8nPwb4Zf4H5CNMQAfupgictqRPukpWKelTFqOtpV9PImSlq0MtFRhTnQMvgHArLT4ZkcDy3dj/D1o/uK8wjR7m70nKiCXJx4/JDqSH3IkgctwyVY881ZlfwjgUaJlqOosQ6TzfSw+NBuuvT28ZMklQ5SMjiAP+5Yj/d3rENzXx+1xeeCmE3xdV3d8E1LhgfpDI2Xobi5kerruzoRlJbMEv233Zux8jQT8ixubMBfv1oPs/POtHMUikVYcWI/tAw/g2tkKCWzrqMdNmedUdnSDP+MVGj98wOEZDDmjTcwiJ85mOGIu5u8iiPGmBBNuNh5+zqcfbzo8c2IQBx/qNj6RuCVmgiDo4eQVVmGja4XcNLbHVFp6Th4/zbO+ngiq7oCpqcP4k50GIJSk3DsgRtcQ3wZnqVSHHC/hU3XXeCTEIOzjx7iQUKMSvl8oYhuZ/7i8C4ceXAHbpGhKJXNtBN4JsZhz60bCElLxe2oENyJDYNE2V8fIcaEaGZjG4PhBgMqAw7ZzZE0vljMrkaSg7RQvliktEpJ9Xye5LsXw/DUypSDaDu4fRAOMAt45LrRwJgQTZfbykZ1TMXJX8UtMAN1Rqeaopx3+Ft+2lmMVqGTfxcJepB66yB626pVRqHqoVKSX103EowJ0d8LT2ltcjCUylv9s/MqoMhXGOGGuKsbwe9tU/klDI/nLf+7oVGi5TEKiYSHxpIUVOcnorYgFmKBqpslGRCjvToP/P4u2TkMAf1dTWityEBTeRaaSp6gs5ZsNVZtpbz+drTW5GFAKsKA/AFIB9FeW4Ce5kpaFvlHzupqKkFpmmIR5YBUzJLN62tGbUESavKT0FSaDKlUboJGh2yNEk3QUZ6B8JOrURLvheb6UmQHXkbg7s/QUhDH5mkrS8c9kznIvLuHHst/stm+5/HAZhGq0gNRnxuDCGdzxJ6yAK9L8QKq9Lv78dB0PlrKUllKBqUSBG3/BPEX7Okx0UukAwg9qIvgrX8Gnyt70LK5g6pUPwTu+QKlaUFobyhHgusWhB/URX+X6hLikUCjRPN6muG79nfI9FCd0o/c9zm8rN8Fr7eNHhfFeyJix18RuO5X6O9pYQkr9DkNf/tFEPIYYlpygvDgcy0UBjExDD63C6lu+xFg/Q5Sr29jyyemJWznp0i8aMXqWuqKEXfeBgEm81Aeo/B4xBIhgrb+idZJjq6abNyzegd5Icx1RgMaJbo48ia8jGejrZJ5y4scDfkJyAtwAbe3DdyeJhQmPUZ9dgg8DN9ASehVNl+hzzn4rXmPPjCC3EfH4e3wW7RXZdHjiqww1Jc9QcqVdfC1WQRuO7PYkRK9awmSLtmxZRXEPkRrUxGCv/oQMQeXYmBARA3NwKAY0c5G8DWdhVyfMxCKmEXv3L5m8Po7RslwaJjoLLf98DGfj7ZahpjhKl2eHozqnEiIJSKEbv0LQvYshkTCp2kFPqcp0QJeJxqrc5Hucx597czQWyoVIyPwMgSiXtRlBcNj5UwUBTK3IoWEEp18kSFa0NeB7OCr9PrZnkfgaTQDDQWMn010HXWFCNvzD3jpT0HE9r+hIvouBuUu6XCVfgFolOhsz5PwWDkNNcnMbit5Hy+lNzEI6eAA0r3PoSDyHiqyYpHkuhEepnNQlx1G8xGiQzb8HpXJ3oi6vJ4tl9x7d0s5km7vR0VaCEqT/RGy5c8I3vUhxCIubdGhuwnRtjR/XV4MUtyPoTwjEkWhd+Bv+TZSLq9jyyIYGBShOPgKgjf/CZ6GUxHxtT5626vZa44UGiW6oSgeXqazEHNsFSSDikEAQX1FDuqLU5AXfkt2u1L0tFXhse1/IekcY1sLHp9ByMb3UZnkAQ/LhcjyPMZ2lEVxnmgsJFE25rgk+Bt4GE5DTSYTIwnbtRgpMqLTA75Bb3stjWMTDyT58lr4WP8UfW3V4PN7kHb/MOrzmc6Zz+1E5p098DGYgpTrW2S1HTk0RjS5fdKCM2/txkM9bcSftkZrSTJ1u3ICXKhdLgm/idJI1ZdHpVxdD2+jN9DfWo7igEvwtf4ZBLxW5PtdgoeuNpKvbYCY34EE16/A61BE8Pq66hFg83NEHTWAZFCMyD2fI/n/HMDraUTctc10dCofn9bnxeLhCm3ken4NiUQAn3W/QeiuT1n/nN9TD0/OfyLX/RBb/kihMaIJiJ87MChBUdAVhG/+AAHr30fg3uXI9r0IqVSC+Os7kOV9TuWc5rIUBKz7HYojbqEsxh0Bu5bQTokg3/sMfL/8AzI8jiHkOAcdNUxgXj4GzPL8GkHbPkFbVRYCN/4ROQ+OoKE4ASFHLWjLJTTSDlAiRMxpCwR/vQJCIRdd9UWIOGOHzOBrqCpIRYb/FeT4XYREzPQVowGNEq3ck4jEAuqXivjMPB2hRsjvhYDXy+YhgwfSCYlE3RDxeiEScSES9EGqtEtWLOgFt68VQm4nxCKhTMuYHnI2t6cNGUHXEX91E/o76yCRiMHjdkIgEcj6Blk5g0LweZ20RcvR3VaL9uYyCLjKodjR6Q01TDQD+fY0uTCkDHMDUqJVkDrcEHuoRg4mhfQFvF61mDVNlUBKo91DQWfo1ZVUP5z2xTAmRCtTPPyxQsvQOyBbuqWeQxnPTBwFDF/HF4XGiFZei6EcJ5LrSXjzabeh/lLWp+X7LghFItQ2NkIilu1bHCZgpVI35YRhFS8OjRJdUltLZ1TIzZTX1aOklvESUgsK6KZNYiiEEjGS83MRm5FO9/4xC22AtOJixGRmoraxmTUh1Y2N6OVy6ffuvj7UNjMjRjkfTe1taOmQb8aXoqOnGwEJcWw6+cyrrERMRgbyKyroTDypW21zK91gJG/DbT3dSMjLkZ01OtAc0eSNA3ExEEqYDigyKx0XvT3Q1d+HAzev0ukkgvTSYkp0QXUlImTrKohlvB8ZhpDUFPjFxbNlRjxJRUMbEx+pbGpCdCbzWmK5vU8rLEB2SSmbv7i2Bpd9vNCptKvrUWwMIjMzcS8smG6DI0jMy0N+NYn0McgqK4WL9yNw+f8CXgchyy8uFiIZ0bmVFbjq7wv3mEjcCQ8BX8CEIRNzclBUU4P27l4EJSlI9YgKR2hGGnziYlgiI9KfoLGN6egqm5sRm5sru5aM6OJC5JSWMbrBQXhFR+JGoB9ishWvYPNLTMStoEAEpjAvYSFIKMhHfjXzaxNLBvAwKhyugb5ILihg84wUGiOa3HpKXg775pjKxgYk5OYgMCkB2WVlbGvq7O2FX1I8/ONjUd+iCH+GpaUiMj2NnkO8FoKs0mK0yZYMdPb04mFEBJ7k50Iks8GltTUol21Z7u7rRXpRIbq4XCRmZ7HmI5Po+rlIzcujpoMgr6oSVTIz1NrZicyyUrT19CIlX/GqzZFCY0QPwTM6FvGAGALZGwwIiD8slg6gXyD76ap0YorvArEQvXzukLfRkDzqHd9wl1fvG+nAR62s4c57EYwd0S8KdTaGgTqpP0T88Il+STBB9BhhgugxwgTRY4QJoscIE0SPESaIHiNMED1GmCB6jECInvh/wccA/w+3Be64Y+kBogAAAABJRU5ErkJggg==" alt="Vale dos Karajás" style="height:60px;width:auto;flex-shrink:0;" />
+    <div>
+      <div class="h-eyebrow">
+        <span class="h-tag">Relatório de Performance</span>
+        <span class="h-sep">·</span>
+        <span class="h-tag blue">Meta Ads</span>
+      </div>
+      <h1 class="h-title">Vale dos Karajás</h1>
+      <p class="h-meta">1493590528494715 — Vale dos Karajás — MSG — Gestor: Pedro Silva</p>
     </div>
-    <h1 class="h-title">Vale dos Karajás</h1>
-    <p class="h-meta">1493590528494715 — Vale dos Karajás — MSG — Gestor: Pedro Silva</p>
   </div>
   <div class="h-bottom" style="align-items:center;gap:10px;">
     <div class="cal-wrap">
@@ -457,7 +461,7 @@ body{background:var(--bg);color:var(--text);font-family:'Poppins',sans-serif;pad
     <div class="chart-canvas-wrap" style="height:180px;max-width:100%;"><canvas id="chartPie"></canvas></div>
     <div class="pie-legend" style="grid-template-columns:1fr 1fr;margin-top:12px;">
       <div class="pie-leg-item"><div class="pie-leg-top"><span class="pie-leg-dot" style="background:#1877F2;"></span><span class="pie-leg-label">Fundo VEN</span></div><div class="pie-leg-val" style="color:#1877F2;">R$ 5.514</div><div class="pie-leg-pct">45,8%</div></div>
-      <div class="pie-leg-item"><div class="pie-leg-top"><span class="pie-leg-dot" style="background:#7B2FBE;"></span><span class="pie-leg-label">Fundo MSG</span></div><div class="pie-leg-val" style="color:#7B2FBE;">R$ 2.865</div><div class="pie-leg-pct">23,8%</div></div>
+      <div class="pie-leg-item"><div class="pie-leg-top"><span class="pie-leg-dot" style="background:#2D7D64;"></span><span class="pie-leg-label">Fundo MSG</span></div><div class="pie-leg-val" style="color:#2D7D64;">R$ 2.865</div><div class="pie-leg-pct">23,8%</div></div>
       <div class="pie-leg-item"><div class="pie-leg-top"><span class="pie-leg-dot" style="background:#0077A8;"></span><span class="pie-leg-label">Meio</span></div><div class="pie-leg-val" style="color:#0077A8;">R$ 1.926</div><div class="pie-leg-pct">16,0%</div></div>
       <div class="pie-leg-item"><div class="pie-leg-top"><span class="pie-leg-dot" style="background:#E08C00;"></span><span class="pie-leg-label">Topo</span></div><div class="pie-leg-val" style="color:#E08C00;">R$ 1.741</div><div class="pie-leg-pct">14,5%</div></div>
     </div>
@@ -725,7 +729,7 @@ function renderObjCards(D, inicio, fim){
   var META = {
     TOPO: {bg:'#FFF9EC', border:'rgba(224,140,0,0.3)', bar:'#E08C00', color:'#E08C00', icon:'🎯', title:'Topo — Awareness'},
     MEIO: {bg:'#E0F4FA', border:'rgba(0,119,168,0.3)', bar:'#0077A8', color:'#0077A8', icon:'🌐', title:'Meio — Tráfego'},
-    FUNDO_MSG: {bg:'var(--purple-bg)', border:'rgba(123,47,190,0.3)', bar:'#7B2FBE', color:'#7B2FBE', icon:'💬', title:'Fundo — Conversas (MSG)', cls:'msg'},
+    FUNDO_MSG: {bg:'var(--purple-bg)', border:'rgba(45,125,100,0.3)', bar:'#2D7D64', color:'#2D7D64', icon:'💬', title:'Fundo — Conversas (MSG)', cls:'msg'},
     FUNDO_VEN: {bg:'var(--blue-bg)', border:'rgba(24,119,242,0.3)', bar:'#1877F2', color:'#1877F2', icon:'🛒', title:'Fundo — Vendas (VEN)', cls:'ven'}
   };
 
@@ -809,7 +813,7 @@ function renderCampanhasTab(D){
   var CAMPS = D.CAMPS || {};
   var META = {
     FUNDO_VEN: {badge:'fundo-ven', tag:'FUNDO VEN', title:'Fundo de vendas', color:'#1877F2', resultLbl:'Compras', cprLbl:'C/Compra', extraLbl:'ROAS', extraColor:'var(--green)'},
-    FUNDO_MSG: {badge:'fundo-msg', tag:'FUNDO MSG', title:'Fundo de conversas', color:'#7B2FBE', resultLbl:'Conversas', cprLbl:'C/Conversa', extraLbl:'—', extraColor:'var(--teal)'},
+    FUNDO_MSG: {badge:'fundo-msg', tag:'FUNDO MSG', title:'Fundo de conversas', color:'#2D7D64', resultLbl:'Conversas', cprLbl:'C/Conversa', extraLbl:'—', extraColor:'var(--teal)'},
     MEIO:      {badge:'meio', tag:'MEIO', title:'Meio do funil', color:'#0077A8', resultLbl:'Visitas', cprLbl:'C/Visita', extraLbl:'—', extraColor:'var(--text2)'},
     TOPO:      {badge:'topo', tag:'TOPO', title:'Topo do funil', color:'#E08C00', resultLbl:'Alcance', cprLbl:'CPM', extraLbl:'—', extraColor:'var(--text2)'}
   };
@@ -1023,8 +1027,8 @@ var TT={backgroundColor:'#fff',titleColor:'#0F1724',bodyColor:'#0F1724',borderCo
 var seg = (_D.meta.tipo === 'msg' ? 'FUNDO_MSG' : 'FUNDO_VEN');
 var c1=new Chart(document.getElementById('chartInvestRes'),{
   data:{labels:FD[seg].labels,datasets:[
-    {type:'bar',label:'Investido (R$)',data:FD[seg].invest,backgroundColor:'#E8D7F7',borderColor:'#7B2FBE',borderWidth:0.5,borderRadius:4,yAxisID:'y',order:2},
-    {type:'line',label:FD[seg].result_label,data:FD[seg].results,borderColor:'#7B2FBE',backgroundColor:'#7B2FBE',borderWidth:2,tension:0.3,pointRadius:3,yAxisID:'y1',order:1}
+    {type:'bar',label:'Investido (R$)',data:FD[seg].invest,backgroundColor:'#E8F4F0',borderColor:'#2D7D64',borderWidth:0.5,borderRadius:4,yAxisID:'y',order:2},
+    {type:'line',label:FD[seg].result_label,data:FD[seg].results,borderColor:'#2D7D64',backgroundColor:'#2D7D64',borderWidth:2,tension:0.3,pointRadius:3,yAxisID:'y1',order:1}
   ]},
   options:{responsive:true,maintainAspectRatio:false,interaction:{mode:'index',intersect:false},
     plugins:{legend:{display:false},tooltip:{...TT,callbacks:{label:function(ctx){
@@ -1074,7 +1078,7 @@ var centerLabelPlugin={
 };
 var cPie=new Chart(document.getElementById('chartPie'),{
   type:'doughnut',
-  data:{labels:['Fundo VEN','Fundo MSG','Meio','Topo'],datasets:[{data:[0,0,0,0],backgroundColor:['#1877F2','#7B2FBE','#0077A8','#E08C00'],borderWidth:0,spacing:3}]},
+  data:{labels:['Fundo VEN','Fundo MSG','Meio','Topo'],datasets:[{data:[0,0,0,0],backgroundColor:['#1877F2','#2D7D64','#0077A8','#E08C00'],borderWidth:0,spacing:3}]},
   plugins:[centerLabelPlugin],
   options:{responsive:true,maintainAspectRatio:false,cutout:'60%',plugins:{legend:{display:false},tooltip:{...TT,callbacks:{label:function(ctx){return ctx.label+': R$ '+ctx.parsed.toLocaleString('pt-BR',{minimumFractionDigits:2});}}}}}
 });
@@ -1097,7 +1101,7 @@ if(_D.meta.tipo==='msg'){var _rc=document.getElementById('chartReceita');if(_rc&
     var pct=(r.invest/maxInvest*100).toFixed(1);
     html+='<div class="dt-row">'
       +'<div class="dt-date">'+r.label+'</div>'
-      +'<div class="dt-bar-track"><div class="dt-bar-fill" style="width:'+pct+'%;background:#7B2FBE;"></div></div>'
+      +'<div class="dt-bar-track"><div class="dt-bar-fill" style="width:'+pct+'%;background:#2D7D64;"></div></div>'
       +'<div class="dt-stats">'
       +'<div><div class="dt-stat-label">Invest.</div><div class="dt-stat-val" style="text-align:right">R$ '+r.invest.toLocaleString('pt-BR',{minimumFractionDigits:2})+'</div></div>'
       +'<div><div class="dt-stat-label">Conv.</div><div class="dt-stat-val" style="color:var(--purple);text-align:right">'+r.conversas+'</div></div>'
@@ -1123,8 +1127,8 @@ if(_D.meta.tipo==='msg'){var _rc=document.getElementById('chartReceita');if(_rc&
 })();
 
 // ── FILTER ────────────────────────────────────────────────────
-var barColors={FUNDO_VEN:'#E8D7F7',FUNDO_MSG:'#E8D7F7',MEIO:'#CCE8F4',TOPO:'#FFF0CC'};
-var lineColors={FUNDO_VEN:'#1877F2',FUNDO_MSG:'#7B2FBE',MEIO:'#0077A8',TOPO:'#E08C00'};
+var barColors={FUNDO_VEN:'#E8F4F0',FUNDO_MSG:'#E8F4F0',MEIO:'#CCE8F4',TOPO:'#FFF0CC'};
+var lineColors={FUNDO_VEN:'#1877F2',FUNDO_MSG:'#2D7D64',MEIO:'#0077A8',TOPO:'#E08C00'};
 
 // HERO_DATA e GERAL_KPIS são placeholders vazios — são preenchidos dinamicamente em renderRange
 var HERO_DATA={GERAL:{text:'—',stats:[{l:'—',v:'—'},{l:'—',v:'—'},{l:'—',v:'—'}]}};
@@ -1201,12 +1205,12 @@ function applyFilter(s){
   // update charts
   c1.data.labels=fd.labels;
   c1.data.datasets[0].data=fd.invest;
-  c1.data.datasets[0].backgroundColor=barColors[s]||'#E8D7F7';
-  c1.data.datasets[0].borderColor=lineColors[s]||'#7B2FBE';
+  c1.data.datasets[0].backgroundColor=barColors[s]||'#E8F4F0';
+  c1.data.datasets[0].borderColor=lineColors[s]||'#2D7D64';
   c1.data.datasets[1].data=fd.results;
   c1.data.datasets[1].label=fd.result_label;
-  c1.data.datasets[1].borderColor=lineColors[s]||'#7B2FBE';
-  c1.data.datasets[1].backgroundColor=lineColors[s]||'#7B2FBE';
+  c1.data.datasets[1].borderColor=lineColors[s]||'#2D7D64';
+  c1.data.datasets[1].backgroundColor=lineColors[s]||'#2D7D64';
   c1.update();
   c2.data.labels=fd.labels;
   c2.data.datasets[0].data=fd.cpr;
@@ -1336,8 +1340,8 @@ function renderRange(startIso,endIso){
   ];
   if(_D.meta.tipo==='msg'){window._geralKpis=[
     {label:'Investido total',value:'R$ '+_fmtN(totInv),color:'var(--text)',sub:nDays+' dias analisados'},
-    {label:'Conversas',value:_fmtN(msg.totRes),color:'#7B2FBE',sub:'via WhatsApp'},
-    {label:'Custo/Conversa',value:msg.totRes>0?_fmtR(msg.totInv/msg.totRes):'-',color:'#7B2FBE',sub:'custo por resultado'},
+    {label:'Conversas',value:_fmtN(msg.totRes),color:'#2D7D64',sub:'via WhatsApp'},
+    {label:'Custo/Conversa',value:msg.totRes>0?_fmtR(msg.totInv/msg.totRes):'-',color:'#2D7D64',sub:'custo por resultado'},
     {label:'Alcance',value:_fmtN(msg.totReach||topo.totRes),color:'var(--text)',sub:'pessoas impactadas'}];}
 
   // ── Update hero texts dynamically for ALL segments ───────
@@ -1399,7 +1403,7 @@ function renderRange(startIso,endIso){
     var pct=(r.invest/maxI*100).toFixed(1);
     dtHtml+='<div class="dt-row">'
       +'<div class="dt-date">'+r.label+'</div>'
-      +'<div class="dt-bar-track"><div class="dt-bar-fill" style="width:'+pct+'%;background:#7B2FBE;"></div></div>'
+      +'<div class="dt-bar-track"><div class="dt-bar-fill" style="width:'+pct+'%;background:#2D7D64;"></div></div>'
       +'<div class="dt-stats">'
       +'<div><div class="dt-stat-label">Invest.</div><div class="dt-stat-val" style="text-align:right">R$ '+r.invest.toLocaleString('pt-BR',{minimumFractionDigits:2})+'</div></div>'
       +'<div><div class="dt-stat-label">Conv.</div><div class="dt-stat-val" style="color:var(--purple);text-align:right">'+r.conversas+'</div></div>'
