@@ -1419,7 +1419,7 @@ function renderRange(startIso,endIso){
   var totNC=0;
   _D.campanhas.forEach(function(c){if(c.funil!=='FUNDO_MSG')return;c.dias.forEach(function(d){if(d.data>=startIso&&d.data<=endIso)totNC+=d.novos_contatos||0;});});
   var geralText='No intervalo de <span class="insight-hl">'+nDays+' dias</span>, foi investido <span class="insight-hl">R$ '+_fmtN(totInv)+'</span>';
-  if(msg.totInv>0) geralText+=' e criamos <span class="insight-hl">'+_fmtN(msg.totRes)+' oportunidades</span> com conversas iniciadas no WhatsApp';
+  if(msg.totInv>0) geralText+=', alcançamos <span class="insight-hl">'+_fmtN(msg.totReach)+' pessoas</span> e criamos <span class="insight-hl">'+_fmtN(msg.totRes)+' oportunidades</span> com conversas iniciadas no WhatsApp';
   HERO_DATA.GERAL={
     text: geralText+'.',
     stats:[{l:'Conversas Iniciadas',v:_fmtN(msg.totRes)},{l:'Novos Contatos',v:_fmtN(totNC)},{l:'Custo/Conversa',v:msg.totRes>0?_fmtR(msg.totInv/msg.totRes):'—'}]
