@@ -554,9 +554,9 @@ body{background:var(--bg);color:var(--text);font-family:'Poppins',sans-serif;pad
     <div class="day-card"><div class="day-label">Receita Total</div><div class="day-val" style="color:var(--green);">R$ 100k</div><div class="day-sub">atribuída em 15 dias</div></div>
   </div>
   <div class="chart-card" style="margin-bottom:10px;">
-    <div class="chart-title">Receita diária atribuída</div>
-    <div class="chart-sub">Campanhas de venda — receita por dia</div>
-    <div class="chart-canvas-wrap" style="height:180px;"><canvas id="chartReceita"></canvas></div>
+    <div class="chart-title">Conversas por dia</div>
+    <div class="chart-sub">Campanhas de mensagem — volume de conversas</div>
+    <div class="chart-canvas-wrap" style="height:180px;"><canvas id="chartMsg"></canvas></div>
   </div>
   <div class="chart-card">
     <div class="table-head-area" style="margin-bottom:12px;">
@@ -1043,8 +1043,8 @@ function deriveNewSchema(D, inicio, fim){
   var CAMPS = _buildCAMPS(D, inicio, fim);
   var DAILY = _buildDAILY(D, inicio, fim);
   var LABELS = dates.map(_isoToLblA);
-  var RECEITA_SERIES = FILTER_DATA.FUNDO_VEN.receita || [];
-  return {FILTER_DATA:FILTER_DATA, SKPIS:SKPIS, CAMPS:CAMPS, DAILY:DAILY, LABELS:LABELS, RECEITA_SERIES:RECEITA_SERIES};
+  var MSG_SERIES = FILTER_DATA.FUNDO_MSG.results || [];
+  return {FILTER_DATA:FILTER_DATA, SKPIS:SKPIS, CAMPS:CAMPS, DAILY:DAILY, LABELS:LABELS, MSG_SERIES:MSG_SERIES};
 }
 
 // Discover dynamic min/max range from _D
@@ -1066,8 +1066,7 @@ var _DYN_MIN=null, _DYN_MAX=null;
   _D.CAMPS = derived.CAMPS;
   _D.DAILY = derived.DAILY;
   _D.LABELS = derived.LABELS;
-  _D.RECEITA_SERIES = derived.RECEITA_SERIES;
-  if(typeof cReceita!=='undefined'&&cReceita){cReceita.data.labels=_D.LABELS;cReceita.data.datasets[0].data=_D.RECEITA_SERIES;cReceita.update();}
+  _D.MSG_SERIES = derived.MSG_SERIES;
 })();
 
 // ═══════════════════════════════════════════════════════════
@@ -1159,16 +1158,15 @@ var cPie=new Chart(document.getElementById('chartPie'),{
   options:{responsive:true,maintainAspectRatio:false,cutout:'60%',plugins:{legend:{display:false},tooltip:{...TT,callbacks:{label:function(ctx){return ctx.label+': R$ '+ctx.parsed.toLocaleString('pt-BR',{minimumFractionDigits:2});}}}}}
 });
 
-// ── CHART 4: Receita diária ───────────────────────────────────
-var cReceita=new Chart(document.getElementById('chartReceita'),{
+// ── CHART 4: Conversas por dia ───────────────────────────────
+var cMsg=new Chart(document.getElementById('chartMsg'),{
   type:'bar',
-  data:{labels:_D.LABELS,datasets:[{label:'Receita (R$)',data:_D.RECEITA_SERIES,backgroundColor:'rgba(0,147,74,0.7)',borderColor:'#00934a',borderWidth:0.5,borderRadius:4}]},
-  options:{responsive:true,maintainAspectRatio:false,plugins:{legend:{display:false},tooltip:{...TT,callbacks:{label:function(ctx){return 'Receita: R$ '+ctx.parsed.y.toLocaleString('pt-BR',{minimumFractionDigits:2});}}}},
-    scales:{x:{grid:{display:false},border:{display:false},ticks:{font:{size:9},maxRotation:0}},y:{grid:{color:'#EEF1F6'},border:{display:false},ticks:{font:{size:9},callback:function(v){return 'R$'+v.toLocaleString('pt-BR');}}}}}
+  data:{labels:_D.LABELS,datasets:[{label:'Conversas',data:_D.MSG_SERIES,backgroundColor:'rgba(200,16,46,0.7)',borderColor:'#C8102E',borderWidth:0.5,borderRadius:4}]},
+  options:{responsive:true,maintainAspectRatio:false,plugins:{legend:{display:false},tooltip:{...TT,callbacks:{label:function(ctx){return 'Conversas: '+ctx.parsed.y;}}}},
+    scales:{x:{grid:{display:false},border:{display:false},ticks:{font:{size:9},maxRotation:0}},y:{grid:{color:'#EEF1F6'},border:{display:false},ticks:{font:{size:9},stepSize:1}}}}
 });
 
 // ── DAY TABLE ─────────────────────────────────────────────────
-if(_D.meta.tipo==='msg'){var _rc=document.getElementById('chartReceita');if(_rc&&_rc.closest){var _rcc=_rc.closest('.chart-card');if(_rcc)_rcc.style.display='none';}}
 (function(){
   var daily=_D.DAILY;
   var html='';
@@ -1289,7 +1287,7 @@ function applyFilter(s){
   c2.data.datasets[0].label=fd.cpr_label;
   c2.update();
   // resize charts caso tenham sido ocultados anteriormente
-  setTimeout(function(){c1.resize();c2.resize();if(cPie)cPie.resize();if(cReceita)cReceita.resize();},100);
+  setTimeout(function(){c1.resize();c2.resize();if(cPie)cPie.resize();if(cMsg)cMsg.resize();},100);
   updateHero(s);
 }
 
@@ -1377,7 +1375,8 @@ function aggregateRange(startIso,endIso){
 function renderRange(startIso,endIso){
   // Re-derive schema for new range
   var _derived=deriveNewSchema(_D,startIso,endIso);
-  _D.FILTER_DATA=_derived.FILTER_DATA; _D.SKPIS=_derived.SKPIS; _D.CAMPS=_derived.CAMPS; _D.DAILY=_derived.DAILY; _D.LABELS=_derived.LABELS; _D.RECEITA_SERIES=_derived.RECEITA_SERIES;
+  _D.FILTER_DATA=_derived.FILTER_DATA; _D.SKPIS=_derived.SKPIS; _D.CAMPS=_derived.CAMPS; _D.DAILY=_derived.DAILY; _D.LABELS=_derived.LABELS; _D.MSG_SERIES=_derived.MSG_SERIES;
+  if(typeof cMsg!=='undefined'&&cMsg){cMsg.data.labels=_D.LABELS;cMsg.data.datasets[0].data=_D.MSG_SERIES;cMsg.update();}
   FD=_D.FILTER_DATA; SKPIS=_D.SKPIS;
   var agg=aggregateRange(startIso,endIso);
   _RD=agg;
