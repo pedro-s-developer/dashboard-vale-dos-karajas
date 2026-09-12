@@ -1,5 +1,5 @@
 ﻿<!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="pt-BR" data-theme="dark">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -19,6 +19,57 @@
   --purple:#2D7D64;--purple-bg:#E8F4F0;
   --red:#C0392B;--red-bg:#FEF0EF;
 }
+[data-theme="dark"]{
+  color-scheme: dark;
+  --bg:#0B0F17;--white:#161B26;--border:#2A3446;--border-soft:#1F2734;
+  --text:#F1F4F9;--text2:#C7CFDD;--text3:#8B96A8;--text4:#5F6B7E;
+  --blue:#4A9EFF;--blue-bg:#0F2140;
+  --green:#2ECC71;--green-bg:#0E2A1A;
+  --yellow:#F5B04A;--yellow-bg:#33260A;
+  --teal:#2CB4D9;--teal-bg:#0A2A34;
+  --purple:#4FBF9F;--purple-bg:#0E2A22;
+  --red:#E74C3C;--red-bg:#3A0F0B;
+}
+[data-theme="dark"] body{color:var(--text) !important;-webkit-text-fill-color:var(--text);}
+[data-theme="dark"] .h-title{color:var(--text) !important;-webkit-text-fill-color:var(--text) !important;}
+[data-theme="dark"] .sec-title{color:var(--text) !important;-webkit-text-fill-color:var(--text) !important;}
+[data-theme="dark"] .h-meta{color:var(--text3) !important;-webkit-text-fill-color:var(--text3) !important;}
+[data-theme="dark"] .chart-title{color:var(--text) !important;-webkit-text-fill-color:var(--text) !important;}
+[data-theme="dark"] .chart-sub{color:var(--text3) !important;-webkit-text-fill-color:var(--text3) !important;}
+[data-theme="dark"] .kpi-val,[data-theme="dark"] .stage-value,[data-theme="dark"] .obj-num,[data-theme="dark"] .day-val{color:var(--text) !important;-webkit-text-fill-color:var(--text) !important;}
+[data-theme="dark"] .kpi-label,[data-theme="dark"] .kpi-sub,[data-theme="dark"] .stage-name{color:var(--text3) !important;-webkit-text-fill-color:var(--text3) !important;}
+[data-theme="dark"] .filter-btn.active,[data-theme="dark"] .tab-btn.active{color:#fff !important;-webkit-text-fill-color:#fff !important;background:var(--blue) !important;}
+[data-theme="dark"] .filter-btn,[data-theme="dark"] .tab-btn{color:var(--text2);-webkit-text-fill-color:var(--text2);background:var(--white);border-color:var(--border);}
+[data-theme="dark"] .page{background:var(--bg);}
+[data-theme="dark"] .insight{background:linear-gradient(135deg,#050810 0%,#0F1724 50%,#050810 100%);}
+
+/* Tab Campanhas: rebind --cs-* no dark */
+[data-theme="dark"] .campanhas-section{
+  --cs-surface:#161B26;
+  --cs-surface-2:#1F2734;
+  --cs-border:#2A3446;
+  --cs-ink-1:#F1F4F9;
+  --cs-ink-2:#C7CFDD;
+  --cs-ink-3:#8B96A8;
+  --cs-ink-4:#8B96A8;
+  --cs-pos:#2ECC71;
+  --cs-pos-bg:rgba(46,204,113,0.15);
+  --cs-neg:#FF5A5F;
+  --cs-neg-bg:rgba(255,90,95,0.15);
+  --cs-warn:#F5B04A;
+  --cs-warn-bg:rgba(245,176,74,0.15);
+  --cs-accent:#4A9EFF;
+  --cs-accent-soft:rgba(74,158,255,0.15);
+  --cs-brand-red:#FF5A5F;
+}
+[data-theme="dark"] .badge-topo,
+[data-theme="dark"] .badge-meio,
+[data-theme="dark"] .badge-fundo-msg,
+[data-theme="dark"] .badge-fundo-ven{border:1px solid currentColor;}
+
+#btnTheme:hover{border-color:var(--blue);color:var(--blue);}
+[data-theme="dark"] #btnTheme{background:var(--white);border-color:var(--text4);color:var(--yellow);}
+[data-theme="dark"] #btnTheme:hover{border-color:var(--yellow);}
 body{background:var(--bg);color:var(--text);font-family:'Poppins',sans-serif;padding:16px 14px;min-height:100vh;}
 .page{max-width:1180px;margin:0 auto;}
 
@@ -222,6 +273,13 @@ body{background:var(--bg);color:var(--text);font-family:'Poppins',sans-serif;pad
 .funnel-reach-val{font-family:'IBM Plex Mono',monospace;font-size:17px;font-weight:900;color:var(--text);}
 .funnel-reach-arrow{font-size:14px;color:var(--text4);margin-left:auto;}
 .funnel-stages{display:flex;flex-direction:column;gap:7px;}
+.stage-passthru{display:flex;align-items:center;justify-content:center;gap:6px;padding:2px 0;margin:-2px 0;font-family:'IBM Plex Mono',monospace;font-size:10px;font-weight:600;color:var(--text3);}
+.stage-passthru-arr{color:var(--text4);font-size:12px;line-height:1;}
+.stage-passthru-pct{padding:2px 8px;border-radius:10px;background:var(--border-soft);color:var(--text2);}
+.stage-passthru-pct.good{background:var(--green-bg);color:var(--green);}
+.stage-passthru-pct.warn{background:var(--yellow-bg);color:var(--yellow);}
+.stage-passthru-pct.bad{background:var(--red-bg);color:var(--red);}
+.stage-passthru-lbl{color:var(--text4);text-transform:uppercase;letter-spacing:0.5px;font-size:8px;}
 .stage-card{display:flex;flex-direction:column;gap:8px;padding:12px 14px 12px 18px;border:1px solid var(--border);border-radius:10px;background:var(--white);position:relative;overflow:hidden;animation:stageIn 0.5s cubic-bezier(0.16,1,0.3,1) both;}
 .stage-card::before{content:'';position:absolute;left:0;top:0;bottom:0;width:4px;background:var(--stage-color,#1877F2);}
 .stage-label{display:flex;align-items:center;gap:8px;}
@@ -351,9 +409,11 @@ body{background:var(--bg);color:var(--text);font-family:'Poppins',sans-serif;pad
 @media(max-width:767px){
   .cal-drop{position:fixed!important;top:64px!important;left:12px!important;right:12px!important;width:auto!important;max-width:none!important;max-height:calc(100vh - 80px);overflow-y:auto;}
   /* ── Header mobile ── */
+  .header{padding-right:44px;}
   .header img{height:44px!important;}
-  .h-title{font-size:20px;}
-  .h-meta{font-size:9px;}
+  .h-title{font-size:20px;padding-right:0;}
+  .h-meta{font-size:9px;padding-right:0;}
+  #btnTheme{top:10px!important;right:0!important;}
   .h-bottom{margin-top:8px;width:100%;display:flex;justify-content:flex-end;}
   .h-bottom .cal-wrap{display:inline-block;width:auto;}
   .h-bottom .cal-btn{width:auto;}
@@ -379,6 +439,9 @@ body{background:var(--bg);color:var(--text);font-family:'Poppins',sans-serif;pad
   .tab-btn{font-size:10px;padding:6px 8px;min-height:36px;}
   /* ── Section / Group labels ── */
   .sec-title{letter-spacing:1.5px;}
+  /* ── Títulos-insight dinâmicos ── */
+  .chart-title{line-height:1.3;}
+  .chart-sub{line-height:1.35;}
   /* ── Obj cards ── */
   .obj-body{padding:14px;}
   .obj-num{font-size:28px;}
@@ -390,11 +453,13 @@ body{background:var(--bg);color:var(--text);font-family:'Poppins',sans-serif;pad
   .day-val{font-size:16px;}
   .day-label{font-size:10px;}
   .day-sub{font-size:10px;}
-  /* ── Daily table: 4 cols → 2×2 ── */
-  .dt-stats{grid-template-columns:1fr 1fr;gap:6px 8px;}
-  .dt-stat-label{font-size:10px;}
-  .dt-stat-val{font-size:11px;}
-  .dt-date{font-size:10px;}
+  /* ── Daily table: cards compactos 2×2 alinhados à esquerda ── */
+  .dt-row{padding:14px 0 12px;}
+  .dt-date{font-size:11px;font-weight:700;color:var(--text2);margin-bottom:10px;padding-bottom:6px;border-bottom:1px solid var(--border-soft);}
+  .dt-stats{display:grid;grid-template-columns:1fr 1fr;gap:12px 14px;margin-top:0;}
+  .dt-cell{display:flex;flex-direction:column;align-items:flex-start;gap:3px;text-align:left;}
+  .dt-stat-label{font-size:9px;color:var(--text4);text-transform:uppercase;letter-spacing:0.6px;font-weight:600;margin-bottom:0;text-align:left;}
+  .dt-stat-val{font-size:15px;font-weight:800;font-family:'IBM Plex Mono',monospace;text-align:left;line-height:1.1;color:var(--text);}
   /* ── Funnel ── */
   .funnel-reach-val{font-size:15px;}
   .funnel-reach-label{font-size:10px;}
@@ -403,6 +468,11 @@ body{background:var(--bg);color:var(--text);font-family:'Poppins',sans-serif;pad
   .stage-name{font-size:10px;}
   .stage-order{font-size:10px;}
   .funnel-insight-text{font-size:11px;}
+  /* ── Taxas de passagem no funil ── */
+  .stage-passthru{padding:4px 0;gap:6px;flex-wrap:wrap;justify-content:center;}
+  .stage-passthru-pct{font-size:11px;padding:3px 10px;}
+  .stage-passthru-lbl{font-size:9px;letter-spacing:0.3px;}
+  .stage-passthru-arr{font-size:14px;}
   /* ── Footer ── */
   .footer{flex-direction:column;align-items:flex-start;gap:4px;}
 }
@@ -433,6 +503,7 @@ body{background:var(--bg);color:var(--text);font-family:'Poppins',sans-serif;pad
 <!-- HEADER -->
 <div class="header">
   <div style="position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,#2D7D64 0%,#C47B30 100%);border-radius:3px 3px 0 0;"></div>
+  <button id="btnTheme" onclick="toggleTheme()" title="Alternar tema claro/escuro" aria-label="Alternar tema" style="position:absolute;top:12px;right:0;width:36px;height:36px;padding:0;border:1px solid var(--border);border-radius:8px;background:var(--white);color:var(--text2);cursor:pointer;font-size:15px;line-height:1;display:flex;align-items:center;justify-content:center;transition:all 0.15s;z-index:5;">☀</button>
   <div style="display:flex;align-items:center;gap:14px;">
     <img src="data:image/png;base64,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" alt="Vale dos Karajás" style="height:60px;width:auto;flex-shrink:0;" />
     <div>
@@ -523,7 +594,7 @@ body{background:var(--bg);color:var(--text);font-family:'Poppins',sans-serif;pad
     <div class="chart-canvas-wrap" style="height:160px;"><canvas id="chartCPR"></canvas></div>
   </div>
   <div class="chart-card" style="overflow:hidden;">
-    <div class="chart-title">Distribuição do Investimento</div>
+    <div class="chart-title" id="titleInvest">Distribuição do Investimento</div>
     <div class="chart-sub">Por estágio do funil</div>
     <div class="chart-canvas-wrap" style="height:180px;max-width:100%;"><canvas id="chartPie"></canvas></div>
     <div class="pie-legend" style="grid-template-columns:1fr 1fr;margin-top:12px;">
@@ -557,8 +628,8 @@ body{background:var(--bg);color:var(--text);font-family:'Poppins',sans-serif;pad
     <div class="day-card"><div class="day-label">Receita Total</div><div class="day-val" style="color:var(--green);">R$ 100k</div><div class="day-sub">atribuída em 15 dias</div></div>
   </div>
   <div class="chart-card" style="margin-bottom:10px;">
-    <div class="chart-title">Conversas por dia</div>
-    <div class="chart-sub">Campanhas de mensagem — volume de conversas</div>
+    <div class="chart-title" id="titleConversas">Conversas por dia</div>
+    <div class="chart-sub" id="subConversas">Campanhas de mensagem — volume de conversas</div>
     <div class="chart-canvas-wrap" style="height:180px;"><canvas id="chartMsg"></canvas></div>
   </div>
   <div class="chart-card">
@@ -1076,6 +1147,16 @@ function renderFunilTab(D, inicio, fim){
       + '<div><div class="stage-rate-val '+stgClass(ratePct)+'">'+(ratePct>0?ratePct.toFixed(1)+'%':'—')+'</div><div class="stage-rate-label">'+rateLabel+'</div></div>'
       + '</div>';
   }
+  // Helper — seta com taxa de passagem entre etapas
+  function passthru(fromN, toN, label){
+    var p = fromN>0 ? Math.round(toN/fromN*1000)/10 : 0;
+    var cls = p>=50?'good':(p>=15?'warn':(p>0?'bad':''));
+    return '<div class="stage-passthru">'
+      + '<span class="stage-passthru-arr">↓</span>'
+      + '<span class="stage-passthru-pct '+cls+'">'+(p>0?p.toFixed(1).replace('.',',')+'%':'—')+'</span>'
+      + '<span class="stage-passthru-lbl">'+label+'</span>'
+      + '</div>';
+  }
   // MSG funnel
   if(tipo!=='ven' && (m.reach>0 || m.results>0)){
     var haWA = m.clicks_wa > 0;
@@ -1093,7 +1174,9 @@ function renderFunilTab(D, inicio, fim){
       + '<div class="funnel-reach-banner"><span style="font-size:16px;font-weight:700;color:var(--text3);">◉</span><div><div class="funnel-reach-label">Alcance total</div><div class="funnel-reach-val">'+_fmtNuma(m.reach)+' pessoas</div></div><span class="funnel-reach-arrow">↓</span></div>'
       + '<div class="funnel-stages">'
       +   (haWA ? stg('s-blue','↗','Cliques WA','Etapa 1 de '+nStg, m.clicks_wa, mp1, 'do alcance') : '')
+      +   (haWA && m.results > 0 ? passthru(m.clicks_wa, m.results, 'clique → conversa') : '')
       +   (haWA ? (m.results > 0 ? stg('s-purple','C','Conversas iniciadas',convOrder, m.results, mp2, 'dos cliques') : '') : stg('s-purple','C','Conversas iniciadas',convOrder, m.results, mp1, 'do alcance'))
+      +   (hasNC && m.results > 0 ? passthru(m.results, m.novos_contatos, 'conversa → contato') : '')
       +   (hasNC ? stg('s-teal','★','Novos Contatos','Etapa '+nStg+' de '+nStg, m.novos_contatos, mp3, 'das conversas') : '')
       + '</div>'
       + (haWA
@@ -1270,10 +1353,10 @@ var cMsg=new Chart(document.getElementById('chartMsg'),{
     html+='<div class="dt-row">'
       +'<div class="dt-date">'+r.label+'</div>'
       +'<div class="dt-stats">'
-      +'<div><div class="dt-stat-label">Invest.</div><div class="dt-stat-val" style="text-align:right">R$ '+r.invest.toLocaleString('pt-BR',{minimumFractionDigits:2})+'</div></div>'
-      +'<div><div class="dt-stat-label">Conversas</div><div class="dt-stat-val" style="color:var(--purple);text-align:right">'+r.conversas+'</div></div>'
-      +'<div><div class="dt-stat-label">Nov. Contatos</div><div class="dt-stat-val" style="color:var(--teal);text-align:right">'+(r.novos_contatos||0)+'</div></div>'
-      +'<div><div class="dt-stat-label">Custo/Conversas</div><div class="dt-stat-val" style="color:var(--yellow);text-align:right">'+(cpr>0?'R$ '+cpr.toLocaleString('pt-BR',{minimumFractionDigits:2}):'—')+'</div></div>'
+      +'<div class="dt-cell"><div class="dt-stat-label">Invest.</div><div class="dt-stat-val">R$ '+r.invest.toLocaleString('pt-BR',{minimumFractionDigits:2})+'</div></div>'
+      +'<div class="dt-cell"><div class="dt-stat-label">Conversas</div><div class="dt-stat-val" style="color:var(--purple);">'+r.conversas+'</div></div>'
+      +'<div class="dt-cell"><div class="dt-stat-label">Nov. Contatos</div><div class="dt-stat-val" style="color:var(--teal);">'+(r.novos_contatos||0)+'</div></div>'
+      +'<div class="dt-cell"><div class="dt-stat-label">Custo/Conversas</div><div class="dt-stat-val" style="color:var(--yellow);">'+(cpr>0?'R$ '+cpr.toLocaleString('pt-BR',{minimumFractionDigits:2}):'—')+'</div></div>'
       +'</div></div>';
   });
   var totInvest=daily.reduce(function(a,r){return a+r.invest;},0);
@@ -1281,12 +1364,12 @@ var cMsg=new Chart(document.getElementById('chartMsg'),{
   var totNC=daily.reduce(function(a,r){return a+(r.novos_contatos||0);},0);
   var avgCpr=totConv>0?(totInvest/totConv):0;
   html+='<div class="dt-row" style="background:#F7F8FA;border-top:2px solid var(--border);border-radius:0 0 8px 8px;font-weight:900;">'
-    +'<div class="dt-date" style="color:var(--text2);font-size:10px;text-transform:uppercase;letter-spacing:0.5px;">TOTAL 15 dias</div>'
+    +'<div class="dt-date" style="color:var(--text2);font-size:10px;text-transform:uppercase;letter-spacing:0.5px;">TOTAL '+daily.length+' dias</div>'
     +'<div class="dt-stats">'
-    +'<div><div class="dt-stat-label">Invest.</div><div class="dt-stat-val" style="text-align:right">R$ '+totInvest.toLocaleString('pt-BR',{minimumFractionDigits:2})+'</div></div>'
-    +'<div><div class="dt-stat-label">Conversas</div><div class="dt-stat-val" style="color:var(--purple);text-align:right">'+totConv+'</div></div>'
-    +'<div><div class="dt-stat-label">Nov. Contatos</div><div class="dt-stat-val" style="color:var(--teal);text-align:right">'+totNC+'</div></div>'
-    +'<div><div class="dt-stat-label">Custo/Conversas</div><div class="dt-stat-val" style="color:var(--yellow);text-align:right">'+(avgCpr>0?'R$ '+avgCpr.toLocaleString('pt-BR',{minimumFractionDigits:2}):'—')+'</div></div>'
+    +'<div class="dt-cell"><div class="dt-stat-label">Invest.</div><div class="dt-stat-val">R$ '+totInvest.toLocaleString('pt-BR',{minimumFractionDigits:2})+'</div></div>'
+    +'<div class="dt-cell"><div class="dt-stat-label">Conversas</div><div class="dt-stat-val" style="color:var(--purple);">'+totConv+'</div></div>'
+    +'<div class="dt-cell"><div class="dt-stat-label">Nov. Contatos</div><div class="dt-stat-val" style="color:var(--teal);">'+totNC+'</div></div>'
+    +'<div class="dt-cell"><div class="dt-stat-label">Custo/Conversas</div><div class="dt-stat-val" style="color:var(--yellow);">'+(avgCpr>0?'R$ '+avgCpr.toLocaleString('pt-BR',{minimumFractionDigits:2}):'—')+'</div></div>'
     +'</div></div>';
   document.getElementById('dayTableBody').innerHTML=html;
 })();
@@ -1482,6 +1565,49 @@ function renderRange(startIso,endIso){
   var nDays=agg.nDays;
   var sLbl=_isoToLabel(startIso),eLbl=_isoToLabel(endIso);
 
+  // ── TÍTULOS-INSIGHT DINÂMICOS ───────────────────────────────
+  try{
+    var msgArr=_D.MSG_SERIES||[];
+    var totalMsg=msgArr.reduce(function(a,b){return a+(b||0);},0);
+    var picoIdx=0, picoVal=-1;
+    msgArr.forEach(function(v,i){ if((v||0)>picoVal){picoVal=v||0; picoIdx=i;} });
+    var picoLbl=_D.LABELS && _D.LABELS[picoIdx] ? _D.LABELS[picoIdx] : '';
+    var tMsg=document.getElementById('titleConversas');
+    var sMsg=document.getElementById('subConversas');
+    if(tMsg){
+      if(totalMsg>0 && msg.totInv>0){
+        var custoMsg=msg.totInv/totalMsg;
+        tMsg.textContent = _fmtNuma(totalMsg)+' conversas em '+nDays+' dias — '+_fmtBRLa(custoMsg)+' por conversa';
+      } else if(totalMsg>0){
+        tMsg.textContent = _fmtNuma(totalMsg)+' conversas em '+nDays+' dias';
+      } else {
+        tMsg.textContent = 'Conversas por dia';
+      }
+    }
+    if(sMsg && totalMsg>0 && picoVal>0){
+      sMsg.textContent = 'Pico em '+picoLbl+' ('+_fmtNuma(picoVal)+' conversas)';
+    }
+  }catch(e){}
+
+  try{
+    var invArr=[
+      {label:'Topo', v:topo.totInv||0},
+      {label:'Meio', v:meio.totInv||0},
+      {label:'Fundo MSG', v:msg.totInv||0}
+    ];
+    var totalInvest=invArr.reduce(function(a,b){return a+b.v;},0);
+    var dom=invArr.slice().sort(function(a,b){return b.v-a.v;})[0];
+    var tInv=document.getElementById('titleInvest');
+    if(tInv){
+      if(totalInvest>0 && dom && dom.v>0){
+        var pctDom=Math.round(dom.v/totalInvest*100);
+        tInv.textContent = dom.label+' concentrou '+pctDom+'% do investimento ('+_fmtBRLa(dom.v,0)+')';
+      } else {
+        tInv.textContent = 'Distribuição do Investimento';
+      }
+    }
+  }catch(e){}
+
   // ── Update period labels ─────────────────────────────────
   var el;
   el=document.getElementById('periodBadge');
@@ -1569,10 +1695,10 @@ function renderRange(startIso,endIso){
     dtHtml+='<div class="dt-row">'
       +'<div class="dt-date">'+r.label+'</div>'
       +'<div class="dt-stats">'
-      +'<div><div class="dt-stat-label">Invest.</div><div class="dt-stat-val" style="text-align:right">R$ '+r.invest.toLocaleString('pt-BR',{minimumFractionDigits:2})+'</div></div>'
-      +'<div><div class="dt-stat-label">Conversas</div><div class="dt-stat-val" style="color:var(--purple);text-align:right">'+r.conversas+'</div></div>'
-      +'<div><div class="dt-stat-label">Nov. Contatos</div><div class="dt-stat-val" style="color:var(--teal);text-align:right">'+(r.novos_contatos||0)+'</div></div>'
-      +'<div><div class="dt-stat-label">Custo/Conversas</div><div class="dt-stat-val" style="color:var(--yellow);text-align:right">'+(cpr>0?'R$ '+cpr.toLocaleString('pt-BR',{minimumFractionDigits:2}):'—')+'</div></div>'
+      +'<div class="dt-cell"><div class="dt-stat-label">Invest.</div><div class="dt-stat-val">R$ '+r.invest.toLocaleString('pt-BR',{minimumFractionDigits:2})+'</div></div>'
+      +'<div class="dt-cell"><div class="dt-stat-label">Conversas</div><div class="dt-stat-val" style="color:var(--purple);">'+r.conversas+'</div></div>'
+      +'<div class="dt-cell"><div class="dt-stat-label">Nov. Contatos</div><div class="dt-stat-val" style="color:var(--teal);">'+(r.novos_contatos||0)+'</div></div>'
+      +'<div class="dt-cell"><div class="dt-stat-label">Custo/Conversas</div><div class="dt-stat-val" style="color:var(--yellow);">'+(cpr>0?'R$ '+cpr.toLocaleString('pt-BR',{minimumFractionDigits:2}):'—')+'</div></div>'
       +'</div></div>';
   });
   var tI=daily.reduce(function(a,r){return a+r.invest;},0);
@@ -1582,10 +1708,10 @@ function renderRange(startIso,endIso){
   dtHtml+='<div class="dt-row" style="background:#F7F8FA;border-top:2px solid var(--border);border-radius:0 0 8px 8px;font-weight:900;">'
     +'<div class="dt-date" style="color:var(--text2);font-size:10px;text-transform:uppercase;letter-spacing:0.5px;">TOTAL '+nDays+' dias</div>'
     +'<div class="dt-stats">'
-    +'<div><div class="dt-stat-label">Invest.</div><div class="dt-stat-val" style="text-align:right">R$ '+tI.toLocaleString('pt-BR',{minimumFractionDigits:2})+'</div></div>'
-    +'<div><div class="dt-stat-label">Conversas</div><div class="dt-stat-val" style="color:var(--purple);text-align:right">'+tC+'</div></div>'
-    +'<div><div class="dt-stat-label">Nov. Contatos</div><div class="dt-stat-val" style="color:var(--teal);text-align:right">'+tNC+'</div></div>'
-    +'<div><div class="dt-stat-label">Custo/Conversas</div><div class="dt-stat-val" style="color:var(--yellow);text-align:right">'+(avgCpr>0?'R$ '+avgCpr.toLocaleString('pt-BR',{minimumFractionDigits:2}):'—')+'</div></div>'
+    +'<div class="dt-cell"><div class="dt-stat-label">Invest.</div><div class="dt-stat-val">R$ '+tI.toLocaleString('pt-BR',{minimumFractionDigits:2})+'</div></div>'
+    +'<div class="dt-cell"><div class="dt-stat-label">Conversas</div><div class="dt-stat-val" style="color:var(--purple);">'+tC+'</div></div>'
+    +'<div class="dt-cell"><div class="dt-stat-label">Nov. Contatos</div><div class="dt-stat-val" style="color:var(--teal);">'+tNC+'</div></div>'
+    +'<div class="dt-cell"><div class="dt-stat-label">Custo/Conversas</div><div class="dt-stat-val" style="color:var(--yellow);">'+(avgCpr>0?'R$ '+avgCpr.toLocaleString('pt-BR',{minimumFractionDigits:2}):'—')+'</div></div>'
     +'</div></div>';
   var dtEl=document.getElementById('dayTableBody');
   if(dtEl) dtEl.innerHTML=dtHtml;
@@ -1612,11 +1738,10 @@ function renderRange(startIso,endIso){
     {key:'yesterday',label:'Ontem'},
     {key:'last_7d',label:'Últimos 7 dias'},
     {key:'last_14d',label:'Últimos 14 dias'},
-    {key:'last_28d',label:'Últimos 28 dias'},
+    {key:'last_30d',label:'Últimos 30 dias'},
     {key:'this_month',label:'Este mês'},
     {key:'last_month',label:'Mês passado'},
-    {key:'max',label:'Máximo'},
-    {key:'custom',label:'Personalizado'}
+    {key:'max',label:'Máximo'}
   ];
   var MES_NAMES=['Janeiro','Fevereiro','Março','Abril','Maio','Junho','Julho','Agosto','Setembro','Outubro','Novembro','Dezembro'];
   function _fromIso(s){return new Date(s+'T00:00:00');}
@@ -1632,7 +1757,7 @@ function renderRange(startIso,endIso){
       case 'yesterday': endD=_addDays(end,-1); startD=endD; break;
       case 'last_7d': startD=_addDays(end,-6); break;
       case 'last_14d': startD=_addDays(end,-13); break;
-      case 'last_28d': startD=_addDays(end,-27); break;
+      case 'last_30d': startD=_addDays(end,-29); break;
       case 'this_month': startD=new Date(end.getFullYear(),end.getMonth(),1); break;
       case 'last_month':
         startD=new Date(end.getFullYear(),end.getMonth()-1,1);
@@ -1798,6 +1923,35 @@ function renderRange(startIso,endIso){
 
 // ── Inicializar com range completo ──────────────────────────
 renderRange(_MIN_ISO, _MAX_ISO);
+
+// ═══════════════════════════════════════════════════════════
+// DARK/LIGHT THEME TOGGLE
+// ═══════════════════════════════════════════════════════════
+function toggleTheme(){
+  var root=document.documentElement;
+  var cur=root.getAttribute('data-theme');
+  var next=cur==='dark'?null:'dark';
+  if(next){ root.setAttribute('data-theme',next); }
+  else { root.removeAttribute('data-theme'); }
+  var btn=document.getElementById('btnTheme');
+  if(btn) btn.textContent = next==='dark' ? '☀' : '☾';
+  try{
+    var cs=getComputedStyle(root);
+    var txt3=cs.getPropertyValue('--text3').trim()||'#56657A';
+    var soft=cs.getPropertyValue('--border-soft').trim()||'#EEF1F6';
+    [typeof c1!=='undefined'?c1:null,typeof c2!=='undefined'?c2:null,typeof c3!=='undefined'?c3:null,typeof c4!=='undefined'?c4:null,typeof c5!=='undefined'?c5:null,typeof cMsg!=='undefined'?cMsg:null].forEach(function(ch){
+      if(!ch) return;
+      if(ch.options && ch.options.scales){
+        Object.keys(ch.options.scales).forEach(function(k){
+          var sc=ch.options.scales[k];
+          if(sc.ticks) sc.ticks.color=txt3;
+          if(sc.grid) sc.grid.color=soft;
+        });
+      }
+      ch.update('none');
+    });
+  }catch(e){}
+}
 </script>
 </body>
 </html>
